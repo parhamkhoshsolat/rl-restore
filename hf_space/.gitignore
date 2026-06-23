@@ -1,0 +1,10 @@
+# Local dependencies and build artifacts. The HuggingFace Space rebuilds the
+# frontend inside Docker (see Dockerfile + .dockerignore), so none of this needs
+# to be pushed to the Space.
+frontend/node_modules/
+frontend/dist/
+**/__pycache__/
+*.pyc
+.venv/
+*.tsbuildinfo
+.DS_Store

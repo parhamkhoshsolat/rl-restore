@@ -1,0 +1,133 @@
+.enh {
+  margin-top: var(--s-4);
+}
+
+/* CTA banner — the single "loud" element on the result: gradient border + glow */
+.enh--cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: var(--s-4) var(--s-5);
+  border-radius: var(--r-card);
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--panel), var(--panel)) padding-box,
+    var(--accent-gradient) border-box;
+  box-shadow: var(--glow-accent-soft);
+}
+.enh__cta-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.enh__cta-sub {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-top: 3px;
+  max-width: 62ch;
+}
+.enh__cta-honest {
+  color: var(--text-muted);
+}
+.enh__go {
+  white-space: nowrap;
+}
+.enh__err {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+/* working reveal — scanline sweep over the restored frame during the CPU wait */
+.enh--working {
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-card);
+  padding: var(--s-3);
+  background: var(--panel);
+}
+.enh__stage {
+  position: relative;
+  border-radius: var(--r-control);
+  overflow: hidden;
+}
+.enh__stage-img {
+  width: 100%;
+  filter: saturate(0.9) brightness(0.92);
+}
+.enh__scan {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 26%;
+  background: linear-gradient(90deg, transparent, rgba(123, 108, 255, 0.4), transparent);
+  animation: enh-scan 1.25s var(--ease) infinite;
+}
+@keyframes enh-scan {
+  0% {
+    left: -26%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+.enh__working-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-top: var(--s-3);
+}
+
+/* done — the crisp reveal + loupe */
+.enh--done {
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-card);
+  padding: var(--s-4);
+  background: var(--panel);
+  box-shadow: var(--glow-success);
+}
+.enh__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--s-3);
+}
+.enh__title {
+  font-size: 1.1rem;
+}
+.enh__dims {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+.enh__honest {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: var(--s-3) 0;
+}
+.enh__loupe {
+  margin-top: var(--s-3);
+}
+.enh__loupe-label {
+  display: block;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-bottom: var(--s-2);
+}
+.enh__actions {
+  display: flex;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .enh--cta {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+  }
+}

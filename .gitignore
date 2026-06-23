@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node / frontend build
+node_modules/
+hf_space/frontend/dist/
+
+# Data and training outputs (regenerate locally).
+# Trained weights ship under hf_space/checkpoints/ and are tracked.
+/data/
+/checkpoints/
+/runs/
+
+# OS / editor
+.DS_Store
+*.zip
+hf_space/.git/

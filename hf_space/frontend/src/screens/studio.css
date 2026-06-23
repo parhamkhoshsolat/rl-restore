@@ -1,0 +1,130 @@
+.studio {
+  margin-top: 4px;
+}
+
+/* run pad (pre-restore review) */
+.runpad {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 24px;
+  align-items: center;
+  padding: 22px;
+  border-radius: var(--r-card);
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+}
+@media (max-width: 760px) {
+  .runpad {
+    grid-template-columns: 1fr;
+  }
+}
+.runpad--error {
+  border-color: rgba(242, 85, 90, 0.3);
+}
+.runpad__preview {
+  position: relative;
+  border-radius: var(--r-card);
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  background: #05070c;
+}
+.runpad__preview img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+.runpad__origin {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.runpad__title {
+  font-size: clamp(20px, 2.4vw, 26px);
+  margin-bottom: 8px;
+}
+.runpad__desc {
+  margin: 0 0 18px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+.runpad__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.runpad__go {
+  height: 50px;
+  font-size: 15px;
+}
+
+/* hero layout */
+.studio__hero {
+  display: grid;
+  grid-template-columns: 62fr 38fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .studio__hero {
+    grid-template-columns: 1fr;
+  }
+}
+.studio__canvas {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+.studio__side {
+  position: sticky;
+  top: calc(var(--header-h) + 16px);
+}
+@media (max-width: 900px) {
+  .studio__side {
+    position: static;
+  }
+}
+.studio__side-skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 360px;
+  padding: 24px;
+  border-radius: var(--r-card);
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  color: var(--text-muted);
+  font-size: 13.5px;
+  text-align: center;
+}
+
+/* thinking pad overlay (sits over canvas while restoring) */
+.thinkpad {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: var(--r-card);
+  pointer-events: none;
+}
+.thinkpad > span:first-of-type,
+.thinkpad > span {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 15px;
+}
+.thinkpad__sub {
+  color: var(--text-muted) !important;
+  font-weight: 400 !important;
+  font-size: 12.5px !important;
+}
+.thinkpad__hidden {
+  display: none;
+}

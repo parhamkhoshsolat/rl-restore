@@ -1,0 +1,386 @@
+{
+  "per_tool": [
+    {
+      "index": 0,
+      "name": "deblur1 (0-1.25)",
+      "short_name": "deblur1",
+      "band": "blur 0-1.25",
+      "agent_usage_overall": 0.08377938096346288,
+      "agent_usage_by_class": {
+        "mild": 0.12804005722460657,
+        "moderate": 0.08774373259052924,
+        "severe": 0.03759398496240601
+      },
+      "leaveoneout_drop_overall": 0.03459042189417216,
+      "leaveoneout_drop_by_class": {
+        "mild": 0.06339554097784772,
+        "moderate": 0.03583008438538915,
+        "severe": 0.00454564031927962
+      },
+      "specialist_own_band_gain": 0.16,
+      "verdict": "marginal",
+      "flags": []
+    },
+    {
+      "index": 1,
+      "name": "deblur2 (1.25-2.5)",
+      "short_name": "deblur2",
+      "band": "blur 1.25-2.5",
+      "agent_usage_overall": 0.00046544100535257155,
+      "agent_usage_by_class": {
+        "mild": 0.000715307582260372,
+        "moderate": 0.0006963788300835655,
+        "severe": 0.0
+      },
+      "leaveoneout_drop_overall": 0.030272279963174054,
+      "leaveoneout_drop_by_class": {
+        "mild": 0.04689804885948634,
+        "moderate": 0.04087455566472631,
+        "severe": 0.003044235365309955
+      },
+      "specialist_own_band_gain": 1.14,
+      "verdict": "marginal",
+      "flags": []
+    },
+    {
+      "index": 2,
+      "name": "deblur3 (2.5-3.75)",
+      "short_name": "deblur3",
+      "band": "blur 2.5-3.75",
+      "agent_usage_overall": 0.05189667209681173,
+      "agent_usage_by_class": {
+        "mild": 0.04935622317596566,
+        "moderate": 0.060584958217270196,
+        "severe": 0.04579630895420369
+      },
+      "leaveoneout_drop_overall": 0.04075814919327092,
+      "leaveoneout_drop_by_class": {
+        "mild": 0.038544434983730724,
+        "moderate": 0.04574889423035522,
+        "severe": 0.03798111836572504
+      },
+      "specialist_own_band_gain": 0.8,
+      "verdict": "marginal",
+      "flags": []
+    },
+    {
+      "index": 3,
+      "name": "deblur4 (3.75-5)",
+      "short_name": "deblur4",
+      "band": "blur 3.75-5",
+      "agent_usage_overall": 0.0,
+      "agent_usage_by_class": {
+        "mild": 0.0,
+        "moderate": 0.0,
+        "severe": 0.0
+      },
+      "leaveoneout_drop_overall": 0.00905604959198314,
+      "leaveoneout_drop_by_class": {
+        "mild": 0.010565362967134728,
+        "moderate": 0.007008197713059161,
+        "severe": 0.009594588095755086
+      },
+      "specialist_own_band_gain": 0.86,
+      "verdict": "redundant",
+      "flags": [
+        "removable_toolbox_size_evidence"
+      ]
+    },
+    {
+      "index": 4,
+      "name": "denoise1 (0-12.5)",
+      "short_name": "denoise1",
+      "band": "noise 0-12.5",
+      "agent_usage_overall": 0.0409588084710263,
+      "agent_usage_by_class": {
+        "mild": 0.05436337625178827,
+        "moderate": 0.04317548746518106,
+        "severe": 0.025974025974025976
+      },
+      "leaveoneout_drop_overall": 0.007215880569783728,
+      "leaveoneout_drop_by_class": {
+        "mild": 0.006698325985671882,
+        "moderate": 0.0015045494254990466,
+        "severe": 0.013444766298180255
+      },
+      "specialist_own_band_gain": -0.44,
+      "verdict": "redundant",
+      "flags": [
+        "removable_toolbox_size_evidence"
+      ]
+    },
+    {
+      "index": 5,
+      "name": "denoise2 (12.5-25)",
+      "short_name": "denoise2",
+      "band": "noise 12.5-25",
+      "agent_usage_overall": 0.33953921340470095,
+      "agent_usage_by_class": {
+        "mild": 0.33905579399141633,
+        "moderate": 0.3293871866295265,
+        "severe": 0.3499658236500342
+      },
+      "leaveoneout_drop_overall": 0.10302598212657132,
+      "leaveoneout_drop_by_class": {
+        "mild": 0.12270794299691445,
+        "moderate": 0.0756588551920836,
+        "severe": 0.11071114819071592
+      },
+      "specialist_own_band_gain": 1.06,
+      "verdict": "useful",
+      "flags": []
+    },
+    {
+      "index": 6,
+      "name": "denoise3 (25-37.5)",
+      "short_name": "denoise3",
+      "band": "noise 25-37.5",
+      "agent_usage_overall": 0.15848266232255062,
+      "agent_usage_by_class": {
+        "mild": 0.10801144492131616,
+        "moderate": 0.16643454038997216,
+        "severe": 0.19890635680109364
+      },
+      "leaveoneout_drop_overall": 0.047727898805021596,
+      "leaveoneout_drop_by_class": {
+        "mild": 0.05743547325206322,
+        "moderate": 0.05647074490455806,
+        "severe": 0.029277478258443956
+      },
+      "specialist_own_band_gain": 2.24,
+      "verdict": "marginal",
+      "flags": []
+    },
+    {
+      "index": 7,
+      "name": "denoise4 (37.5-50)",
+      "short_name": "denoise4",
+      "band": "noise 37.5-50",
+      "agent_usage_overall": 0.06795438678147545,
+      "agent_usage_by_class": {
+        "mild": 0.02861230329041488,
+        "moderate": 0.06476323119777158,
+        "severe": 0.10868079289131921
+      },
+      "leaveoneout_drop_overall": 0.001955894129765934,
+      "leaveoneout_drop_by_class": {
+        "mild": 0.004957862781063582,
+        "moderate": -0.0037168546018939708,
+        "severe": 0.004626674210128634
+      },
+      "specialist_own_band_gain": 2.95,
+      "verdict": "redundant",
+      "flags": [
+        "removable_toolbox_size_evidence"
+      ]
+    },
+    {
+      "index": 8,
+      "name": "dejpeg1 (60-100)",
+      "short_name": "dejpeg1",
+      "band": "jpeg 60-100",
+      "agent_usage_overall": 0.04491505701652316,
+      "agent_usage_by_class": {
+        "mild": 0.019313304721030045,
+        "moderate": 0.035515320334261836,
+        "severe": 0.0786056049213944
+      },
+      "leaveoneout_drop_overall": 0.004180023249572784,
+      "leaveoneout_drop_by_class": {
+        "mild": 0.00690261652164903,
+        "moderate": 0.003647839720410939,
+        "severe": 0.0019896135066592713
+      },
+      "specialist_own_band_gain": -0.0,
+      "verdict": "redundant",
+      "flags": [
+        "removable_toolbox_size_evidence"
+      ]
+    },
+    {
+      "index": 9,
+      "name": "dejpeg2 (35-60)",
+      "short_name": "dejpeg2",
+      "band": "jpeg 35-60",
+      "agent_usage_overall": 0.026995578310449152,
+      "agent_usage_by_class": {
+        "mild": 0.045064377682403435,
+        "moderate": 0.023676880222841225,
+        "severe": 0.012987012987012988
+      },
+      "leaveoneout_drop_overall": 0.001554180445604736,
+      "leaveoneout_drop_by_class": {
+        "mild": 0.0025792383443157263,
+        "moderate": 0.0008814442371023468,
+        "severe": 0.0012018587553961346
+      },
+      "specialist_own_band_gain": 0.22,
+      "verdict": "redundant",
+      "flags": [
+        "removable_toolbox_size_evidence"
+      ]
+    },
+    {
+      "index": 10,
+      "name": "dejpeg3 (20-35)",
+      "short_name": "dejpeg3",
+      "band": "jpeg 20-35",
+      "agent_usage_overall": 0.02536653479171515,
+      "agent_usage_by_class": {
+        "mild": 0.027896995708154508,
+        "moderate": 0.025069637883008356,
+        "severe": 0.02323991797676008
+      },
+      "leaveoneout_drop_overall": 0.00045573744044835607,
+      "leaveoneout_drop_by_class": {
+        "mild": 0.00110411164665436,
+        "moderate": -0.000134032376938098,
+        "severe": 0.0003971330516279181
+      },
+      "specialist_own_band_gain": 0.13,
+      "verdict": "redundant",
+      "flags": [
+        "removable_toolbox_size_evidence"
+      ]
+    },
+    {
+      "index": 11,
+      "name": "dejpeg4 (10-20)",
+      "short_name": "dejpeg4",
+      "band": "jpeg 10-20",
+      "agent_usage_overall": 0.02420293227833372,
+      "agent_usage_by_class": {
+        "mild": 0.026466380543633764,
+        "moderate": 0.026462395543175487,
+        "severe": 0.019822282980177717
+      },
+      "leaveoneout_drop_overall": 0.016310613802634766,
+      "leaveoneout_drop_by_class": {
+        "mild": 0.01734427315399989,
+        "moderate": 0.018364388017323652,
+        "severe": 0.013223180236582532
+      },
+      "specialist_own_band_gain": 0.16,
+      "verdict": "redundant",
+      "flags": [
+        "removable_toolbox_size_evidence"
+      ]
+    }
+  ],
+  "full_oracle_ceiling_by_class": {
+    "mild": 2.6093164997002507,
+    "moderate": 3.0219478877842016,
+    "severe": 3.697808641807676
+  },
+  "full_oracle_ceiling_overall": 3.1096910097640427,
+  "forward_selection": [
+    {
+      "size": 1,
+      "added_index": 5,
+      "added_name": "denoise2",
+      "ceiling": 2.0398033749873936,
+      "frac_of_full": 0.6559505007354959
+    },
+    {
+      "size": 2,
+      "added_index": 0,
+      "added_name": "deblur1",
+      "ceiling": 2.6269192072359426,
+      "frac_of_full": 0.8447524847284644
+    },
+    {
+      "size": 3,
+      "added_index": 6,
+      "added_name": "denoise3",
+      "ceiling": 2.8564752690013675,
+      "frac_of_full": 0.9185720574913684
+    },
+    {
+      "size": 4,
+      "added_index": 2,
+      "added_name": "deblur3",
+      "ceiling": 2.9821897802569226,
+      "frac_of_full": 0.9589987464649118
+    },
+    {
+      "size": 5,
+      "added_index": 11,
+      "added_name": "dejpeg4",
+      "ceiling": 3.0448495239747975,
+      "frac_of_full": 0.9791485759885303
+    },
+    {
+      "size": 6,
+      "added_index": 1,
+      "added_name": "deblur2",
+      "ceiling": 3.0738240275504665,
+      "frac_of_full": 0.9884660623512245
+    },
+    {
+      "size": 7,
+      "added_index": 4,
+      "added_name": "denoise1",
+      "ceiling": 3.0902653474919193,
+      "frac_of_full": 0.9937531856987948
+    },
+    {
+      "size": 8,
+      "added_index": 3,
+      "added_name": "deblur4",
+      "ceiling": 3.0985261769946937,
+      "frac_of_full": 0.9964096649042323
+    },
+    {
+      "size": 9,
+      "added_index": 8,
+      "added_name": "dejpeg1",
+      "ceiling": 3.1052427243867147,
+      "frac_of_full": 0.9985695410369194
+    },
+    {
+      "size": 10,
+      "added_index": 9,
+      "added_name": "dejpeg2",
+      "ceiling": 3.1071994442505027,
+      "frac_of_full": 0.99919877392779
+    },
+    {
+      "size": 11,
+      "added_index": 7,
+      "added_name": "denoise4",
+      "ceiling": 3.1092352723235943,
+      "frac_of_full": 0.9998534460693949
+    },
+    {
+      "size": 12,
+      "added_index": 10,
+      "added_name": "dejpeg3",
+      "ceiling": 3.1096910097640427,
+      "frac_of_full": 1.0
+    }
+  ],
+  "tools_for_90pct": 3,
+  "tools_for_95pct": 4,
+  "tools_for_99pct": 7,
+  "stop_fraction_by_class": {
+    "mild": 0.17310443490701002,
+    "moderate": 0.13649025069637882,
+    "severe": 0.09842788790157211
+  },
+  "stop_fraction_overall": 0.13544333255759833,
+  "_meta": {
+    "n_pairs_pooled": 600,
+    "n_negative_drops": 2,
+    "agent_usage_available": true,
+    "specialist_matrix_available": true
+  },
+  "protocol": {
+    "per_class": 200,
+    "seed_scheme": "mild 10000.., moderate 20000.., severe 30000..",
+    "checkpoint": "checkpoints/agent_full_v2/agent_net.pt",
+    "checkpoint_sha256_16": "824040df400cc7e3",
+    "n_tools": 12,
+    "device": "cpu",
+    "date": "2026-06-13T05:15:46.648096+00:00"
+  }
+}

@@ -1,0 +1,112 @@
+.stepper {
+  position: relative;
+  padding: 22px 8px 6px;
+}
+.stepper__track {
+  position: absolute;
+  top: 34px;
+  left: 5%;
+  right: 5%;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--hairline);
+  overflow: hidden;
+}
+.stepper__track-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--accent-gradient-h);
+  box-shadow: 0 0 14px rgba(79, 124, 255, 0.5);
+  transition: width var(--dur) var(--ease);
+}
+.stepper__nodes {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.stepper__node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+.stepper__dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--hairline-strong);
+  background: var(--panel);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  transition:
+    transform var(--dur-fast) var(--ease),
+    border-color var(--dur) var(--ease),
+    background var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+.stepper__dot.is-reached {
+  border-color: var(--accent-a);
+  color: #fff;
+  background: var(--accent-gradient);
+}
+.stepper__dot.is-stop.is-reached {
+  background: var(--success);
+  border-color: var(--success);
+}
+.stepper__dot.is-active {
+  transform: scale(1.12);
+  box-shadow: var(--glow-accent);
+  animation: nodePulse 1.8s var(--ease) infinite;
+}
+.stepper__dot.is-stop.is-active {
+  box-shadow: var(--glow-success);
+}
+@keyframes nodePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(79, 124, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(79, 124, 255, 0);
+  }
+}
+.stepper__dot:hover {
+  border-color: var(--accent-a);
+}
+.stepper__label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-align: center;
+  white-space: nowrap;
+}
+.stepper__cum {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.stepper__delta {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--success);
+}
+
+@media (max-width: 520px) {
+  .stepper__label {
+    font-size: 10px;
+  }
+  .stepper__dot {
+    width: 22px;
+    height: 22px;
+  }
+}

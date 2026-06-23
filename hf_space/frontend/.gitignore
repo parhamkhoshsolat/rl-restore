@@ -1,0 +1,7 @@
+node_modules/
+*.local
+.DS_Store
+npm-debug.log*
+*.tsbuildinfo
+# dist/ is intentionally NOT ignored — see README; the Dockerfile node stage
+# regenerates it, but we commit it so the repo is servable without a build step.

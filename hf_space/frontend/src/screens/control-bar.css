@@ -1,0 +1,125 @@
+.ctl {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4);
+  padding: var(--s-3) var(--s-4);
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-panel);
+}
+
+.ctl__photo {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+}
+.ctl__thumb {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: var(--r-control);
+  border: 1px solid var(--hairline);
+}
+.ctl__change {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  padding: 0;
+}
+.ctl__change:hover:not(:disabled) {
+  color: var(--text);
+}
+.ctl__change:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.ctl__method {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1 1 300px;
+  min-width: 0;
+}
+.ctl__label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+.ctl__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.ctl__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--hairline);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 0.84rem;
+  transition:
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease);
+}
+.ctl__chip:hover:not(:disabled) {
+  border-color: var(--hairline-strong);
+  color: var(--text);
+}
+.ctl__chip.is-active {
+  border-color: transparent;
+  background: var(--accent-gradient);
+  color: #fff;
+  box-shadow: var(--glow-accent-soft);
+}
+.ctl__chip:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.ctl__chip-emoji {
+  font-size: 0.95rem;
+}
+.ctl__hint {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.ctl__go {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  margin-left: auto;
+}
+.ctl__compare {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.ctl__restore {
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .ctl__method {
+    flex-basis: 100%;
+    order: 3;
+  }
+  .ctl__go {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+    order: 2;
+  }
+}

@@ -1,0 +1,146 @@
+.canvas {
+  position: relative;
+  width: 100%;
+  border-radius: var(--r-card);
+  overflow: hidden;
+  background: #05070c;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-panel);
+}
+.canvas__stack {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #05070c;
+}
+.canvas__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: opacity, clip-path;
+  user-select: none;
+}
+.canvas__img--top {
+  z-index: 2;
+}
+
+/* the moving reveal edge — accent-tinted glow line */
+.canvas__wipe-edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  z-index: 3;
+  transform: translateX(-1px);
+  background: linear-gradient(180deg, var(--accent-a), var(--accent-b));
+  box-shadow: 0 0 18px 2px rgba(123, 108, 255, 0.7);
+  pointer-events: none;
+}
+
+.canvas--empty {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+}
+.canvas__placeholder {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.canvas__badge {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+  padding: 0 12px 0 10px;
+  border-radius: var(--r-pill);
+  background: rgba(8, 11, 18, 0.72);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--hairline-strong);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.canvas__badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-a);
+  box-shadow: 0 0 10px var(--accent-a);
+}
+.canvas__badge-dot[data-stop='true'] {
+  background: var(--success);
+  box-shadow: 0 0 10px var(--success);
+}
+
+/* thinking overlay */
+.canvas__thinking {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  background: rgba(5, 7, 12, 0.35);
+}
+.canvas__shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 20%,
+    rgba(123, 108, 255, 0.16) 40%,
+    rgba(79, 124, 255, 0.22) 50%,
+    rgba(123, 108, 255, 0.16) 60%,
+    transparent 80%
+  );
+  background-size: 220% 100%;
+  animation: shimmer 1.5s var(--ease) infinite;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 180% 0;
+  }
+  100% {
+    background-position: -80% 0;
+  }
+}
+.canvas__thinking-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: var(--r-pill);
+  background: rgba(8, 11, 18, 0.82);
+  border: 1px solid var(--hairline-strong);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.canvas__pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-a);
+  box-shadow: 0 0 0 0 rgba(79, 124, 255, 0.6);
+  animation: pulse 1.4s var(--ease) infinite;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(79, 124, 255, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(79, 124, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(79, 124, 255, 0);
+  }
+}

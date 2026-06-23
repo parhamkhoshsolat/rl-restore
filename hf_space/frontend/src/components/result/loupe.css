@@ -1,0 +1,25 @@
+.loupe {
+  position: relative;
+  border-radius: var(--r-card);
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  background: var(--bg);
+  touch-action: none;
+  cursor: crosshair;
+}
+.loupe__img {
+  width: 100%;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.loupe__lens {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    var(--glow-accent-soft),
+    0 6px 18px -6px rgba(0, 0, 0, 0.8);
+}

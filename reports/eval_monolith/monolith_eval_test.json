@@ -1,0 +1,33 @@
+{
+  "per_class": {
+    "mild": {
+      "psnr_gain_db": 3.383881799694744,
+      "gain_std_db": 4.099083291666978,
+      "n_episodes": 500
+    },
+    "moderate": {
+      "psnr_gain_db": 3.9097471426442683,
+      "gain_std_db": 3.963985152378856,
+      "n_episodes": 500
+    },
+    "severe": {
+      "psnr_gain_db": 4.785106320886542,
+      "gain_std_db": 4.315490830900121,
+      "n_episodes": 500
+    }
+  },
+  "overall": {
+    "monolith_psnr_gain_db": 4.026245087741851
+  },
+  "protocol": {
+    "n_per_class": 500,
+    "seeds_scheme": "mild 10000.., moderate 20000.., severe 30000..",
+    "checkpoint": "/content/drive/MyDrive/rlrestore-colab/checkpoints/monolith/monolith/best.pt",
+    "checkpoint_sha256": "952c8552b0cc984b",
+    "param_count": 448195,
+    "test_split": "DIV2K 751-800",
+    "image_dtype": "uint8 (training parity)",
+    "device": "cuda",
+    "date": "2026-06-13T16:10:37.456634+00:00"
+  }
+}

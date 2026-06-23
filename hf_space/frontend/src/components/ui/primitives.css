@@ -1,0 +1,170 @@
+/* Shared primitive styling. Glows are accent-tinted, never grey. */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: var(--r-control);
+  border: 1px solid var(--hairline-strong);
+  background: var(--panel-elevated);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition:
+    transform var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease);
+}
+.btn:hover {
+  border-color: var(--accent-a);
+  transform: translateY(-1px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn--primary {
+  border: none;
+  color: #fff;
+  background: var(--accent-gradient);
+  box-shadow: var(--glow-accent);
+  font-weight: 600;
+}
+.btn--primary:hover {
+  box-shadow:
+    0 0 0 1px rgba(123, 108, 255, 0.5),
+    0 14px 36px -10px rgba(79, 124, 255, 0.6);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-dim);
+}
+.btn--ghost:hover {
+  background: var(--panel-elevated);
+  color: var(--text);
+  border-color: transparent;
+}
+
+.btn--icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--r-control);
+}
+
+.btn.is-active {
+  border-color: var(--accent-a);
+  color: var(--text);
+  box-shadow: var(--glow-accent);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+  padding: 0 11px;
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: 1px solid var(--hairline-strong);
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.02);
+  white-space: nowrap;
+}
+.pill--accent {
+  color: #c9d4ff;
+  border-color: rgba(79, 124, 255, 0.4);
+  background: rgba(79, 124, 255, 0.12);
+}
+.pill--success {
+  color: #b7f0d4;
+  border-color: rgba(61, 214, 140, 0.4);
+  background: rgba(61, 214, 140, 0.12);
+}
+.pill--warn {
+  color: #f7d3a0;
+  border-color: rgba(242, 163, 60, 0.4);
+  background: rgba(242, 163, 60, 0.12);
+}
+.pill--danger {
+  color: #f7b1b3;
+  border-color: rgba(242, 85, 90, 0.4);
+  background: rgba(242, 85, 90, 0.12);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-panel);
+}
+.panel--elevated {
+  background: var(--panel-elevated);
+}
+.panel--glow {
+  border-color: rgba(79, 124, 255, 0.32);
+  box-shadow: var(--glow-accent);
+}
+
+.segmented {
+  display: inline-flex;
+  padding: 4px;
+  gap: 2px;
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-pill);
+}
+.segmented__opt {
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  border-radius: var(--r-pill);
+  height: 36px;
+  padding: 0 16px;
+  font-size: 13px;
+  font-weight: 600;
+  transition:
+    color var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease);
+}
+.segmented--sm .segmented__opt {
+  height: 30px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+.segmented__opt.is-active {
+  color: #fff;
+  background: var(--accent-gradient);
+  box-shadow: var(--glow-accent);
+}
+.segmented__opt:not(.is-active):hover {
+  color: var(--text);
+}
+
+.spinner {
+  display: inline-block;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.18);
+  border-top-color: var(--accent-a);
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "per_class": {
+    "mild": {
+      "agent": {
+        "psnr_gain_db": 2.881836967101036,
+        "action_hist": [
+          180,
+          1,
+          90,
+          0,
+          115,
+          386,
+          133,
+          34,
+          27,
+          82,
+          64,
+          52,
+          239
+        ],
+        "entropy": 2.124846506313243,
+        "stop_rate_t1": 0.024,
+        "stop_rate_t2": 0.146,
+        "stop_rate_t3": 0.308,
+        "mean_max_q": 2.1199764032373203,
+        "mean_chain_length": 2.3280000000000003,
+        "top_tools": [
+          {
+            "index": 5,
+            "name": "denoise2 (12.5-25)",
+            "count": 386
+          },
+          {
+            "index": 0,
+            "name": "deblur1 (0-1.25)",
+            "count": 180
+          },
+          {
+            "index": 6,
+            "name": "denoise3 (25-37.5)",
+            "count": 133
+          }
+        ],
+        "n_episodes": 500
+      },
+      "baselines": {
+        "B0_do_nothing": 0.0,
+        "B1_best_single_tool": 2.3950651099703926,
+        "B1_tool_gains": [
+          0.5993827683737923,
+          -0.274370199677235,
+          -0.08163743816302929,
+          -2.1588424248764384,
+          1.5073354857306476,
+          2.1251213486748473,
+          2.3950651099703926,
+          1.8175322798556368,
+          0.734621073020225,
+          0.9402614498286506,
+          1.8246198809737262,
+          1.547771914102979
+        ],
+        "B2_random_chain_mean": 0.234178957794517,
+        "B2_random_chain_std": 4.164955768076823,
+        "B3_greedy_oracle": 3.4381545781929836,
+        "B4_oracle_with_stop": 3.6196006314074065,
+        "n_episodes": 500,
+        "n_random_chains": 100
+      }
+    },
+    "moderate": {
+      "agent": {
+        "psnr_gain_db": 3.5692589788529294,
+        "action_hist": [
+          141,
+          7,
+          144,
+          0,
+          94,
+          371,
+          187,
+          84,
+          60,
+          47,
+          57,
+          38,
+          213
+        ],
+        "entropy": 2.190147426696937,
+        "stop_rate_t1": 0.014,
+        "stop_rate_t2": 0.086,
+        "stop_rate_t3": 0.326,
+        "mean_max_q": 3.0028536162925885,
+        "mean_chain_length": 2.46,
+        "top_tools": [
+          {
+            "index": 5,
+            "name": "denoise2 (12.5-25)",
+            "count": 371
+          },
+          {
+            "index": 6,
+            "name": "denoise3 (25-37.5)",
+            "count": 187
+          },
+          {
+            "index": 2,
+            "name": "deblur3 (2.5-3.75)",
+            "count": 144
+          }
+        ],
+        "n_episodes": 500
+      },
+      "baselines": {
+        "B0_do_nothing": 0.0,
+        "B1_best_single_tool": 2.9535067313074803,
+        "B1_tool_gains": [
+          0.6125531992356986,
+          -0.1519782693511314,
+          0.2996707487176904,
+          -1.3030341964440744,
+          1.6532031161147127,
+          2.313633036917123,
+          2.9535067313074803,
+          2.9318473578499304,
+          1.1403985104493972,
+          0.9030102544618178,
+          1.9320319513093895,
+          1.7653855057706775
+        ],
+        "B2_random_chain_mean": 1.4994470478837862,
+        "B2_random_chain_std": 3.6047379590680686,
+        "B3_greedy_oracle": 4.101965179639097,
+        "B4_oracle_with_stop": 4.151484047452783,
+        "n_episodes": 500,
+        "n_random_chains": 100
+      }
+    },
+    "severe": {
+      "agent": {
+        "psnr_gain_db": 4.552159730789552,
+        "action_hist": [
+          64,
+          2,
+          116,
+          0,
+          55,
+          405,
+          225,
+          127,
+          122,
+          41,
+          67,
+          49,
+          193
+        ],
+        "entropy": 2.153019321420513,
+        "stop_rate_t1": 0.004,
+        "stop_rate_t2": 0.06,
+        "stop_rate_t3": 0.322,
+        "mean_max_q": 4.387287163304165,
+        "mean_chain_length": 2.5459999999999994,
+        "top_tools": [
+          {
+            "index": 5,
+            "name": "denoise2 (12.5-25)",
+            "count": 405
+          },
+          {
+            "index": 6,
+            "name": "denoise3 (25-37.5)",
+            "count": 225
+          },
+          {
+            "index": 7,
+            "name": "denoise4 (37.5-50)",
+            "count": 127
+          }
+        ],
+        "n_episodes": 500
+      },
+      "baselines": {
+        "B0_do_nothing": 0.0,
+        "B1_best_single_tool": 3.9220536862133852,
+        "B1_tool_gains": [
+          0.6410679009935352,
+          -0.23051708610386445,
+          0.3201822349184789,
+          -1.217491970123012,
+          1.7227790166271593,
+          2.570927615893747,
+          3.4398311001769697,
+          3.9220536862133852,
+          1.546746957628168,
+          0.841922486038153,
+          2.11186354486655,
+          2.0554060248394603
+        ],
+        "B2_random_chain_mean": 2.163012807519066,
+        "B2_random_chain_std": 3.513953673913099,
+        "B3_greedy_oracle": 5.211981552871541,
+        "B4_oracle_with_stop": 5.22544794002397,
+        "n_episodes": 500,
+        "n_random_chains": 100
+      }
+    }
+  },
+  "overall": {
+    "agent_psnr_gain_db": 3.667751892247839,
+    "agent_mean_chain_length": 2.4446666666666665,
+    "agent_stop_rate_t1": 0.013999999999999999,
+    "agent_stop_rate_t2": 0.09733333333333333,
+    "agent_stop_rate_t3": 0.31866666666666665,
+    "B0_do_nothing": 0.0,
+    "B1_best_single_tool": 3.090208509163753,
+    "B2_random_chain_mean": 1.298879604399123,
+    "B3_greedy_oracle": 4.250700436901208,
+    "B4_oracle_with_stop": 4.332177539628053
+  },
+  "protocol": {
+    "n_per_class": 500,
+    "n_random_chains": 100,
+    "seeds_scheme": "mild 10000.., moderate 20000.., severe 30000..",
+    "checkpoint": "checkpoints/agent_full_v2/agent_net.pt",
+    "checkpoint_sha256": "824040df400cc7e3",
+    "test_split": "DIV2K 751-800",
+    "image_dtype": "uint8 (training parity)",
+    "device": "cuda",
+    "date": "2026-06-14T00:05:03.309607+00:00"
+  }
+}

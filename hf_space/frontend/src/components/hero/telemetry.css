@@ -1,0 +1,58 @@
+.telemetry {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.telemetry__gauge-wrap {
+  position: relative;
+  padding: 12px 0 6px;
+}
+.telemetry__delta {
+  position: absolute;
+  top: 8px;
+  right: 14%;
+  padding: 7px 13px;
+  border-radius: var(--r-pill);
+  background: rgba(61, 214, 140, 0.14);
+  border: 1px solid rgba(61, 214, 140, 0.45);
+  color: #b7f0d4;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: var(--glow-success);
+  pointer-events: none;
+}
+
+.telemetry__card {
+  padding: 18px;
+  border-radius: var(--r-card);
+  background: var(--panel-elevated);
+  border: 1px solid var(--hairline);
+  min-height: 132px;
+}
+.telemetry__card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.telemetry__step-no {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+.telemetry__tool {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.telemetry__gloss {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-dim);
+}

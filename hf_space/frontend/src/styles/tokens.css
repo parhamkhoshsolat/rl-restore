@@ -1,0 +1,198 @@
+/* ============================================================================
+   Design tokens — "clinical precision meets darkroom warmth".
+   Dark is primary; a light theme is provided via [data-theme="light"].
+   Color carries meaning (the quality gauge interpolates amber -> blue -> green).
+   ========================================================================= */
+
+:root,
+:root[data-theme='dark'] {
+  /* surfaces */
+  --bg: #0b0e14;
+  --panel: #141925;
+  --panel-elevated: #1c2333;
+  --hairline: #252c3b;
+  --hairline-strong: #2f3850;
+
+  /* text */
+  --text: #e6eaf2;
+  --text-dim: #9aa4b8;
+  --text-muted: #5c6680;
+
+  /* accent gradient */
+  --accent-a: #4f7cff;
+  --accent-b: #9b6bff;
+  --accent: #4f7cff;
+  --accent-gradient: linear-gradient(135deg, #4f7cff 0%, #9b6bff 100%);
+  --accent-gradient-h: linear-gradient(90deg, #4f7cff 0%, #9b6bff 100%);
+
+  /* semantic */
+  --success: #3dd68c;
+  --warn: #f2a33c;
+  --danger: #f2555a;
+
+  /* gauge stops (low -> high) */
+  --gauge-low: #f2a33c;
+  --gauge-mid: #4f7cff;
+  --gauge-high: #3dd68c;
+
+  /* glows (accent-tinted, NOT grey drop-shadows — the premium tell) */
+  --glow-accent: 0 0 0 1px rgba(79, 124, 255, 0.35), 0 8px 28px -8px rgba(79, 124, 255, 0.45);
+  --glow-accent-soft: 0 0 28px -6px rgba(123, 108, 255, 0.5);
+  --glow-success: 0 0 24px -6px rgba(61, 214, 140, 0.5);
+  --shadow-panel: 0 1px 0 0 rgba(255, 255, 255, 0.02) inset, 0 12px 32px -16px rgba(0, 0, 0, 0.7);
+
+  /* radii */
+  --r-card: 12px;
+  --r-control: 8px;
+  --r-pill: 999px;
+
+  /* spacing scale */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+
+  /* typography */
+  --font-ui: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Geist Mono', monospace;
+
+  /* motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur: 320ms;
+  --dur-slow: 700ms;
+
+  /* layout */
+  --maxw: 1180px;
+  --header-h: 60px;
+}
+
+:root[data-theme='light'] {
+  --bg: #f4f6fb;
+  --panel: #ffffff;
+  --panel-elevated: #ffffff;
+  --hairline: #e2e7f0;
+  --hairline-strong: #d2d9e6;
+
+  --text: #131722;
+  --text-dim: #4a5468;
+  --text-muted: #8a93a6;
+
+  --glow-accent: 0 0 0 1px rgba(79, 124, 255, 0.3), 0 10px 30px -10px rgba(79, 124, 255, 0.35);
+  --glow-accent-soft: 0 0 30px -8px rgba(123, 108, 255, 0.4);
+  --glow-success: 0 0 26px -8px rgba(61, 214, 140, 0.4);
+  --shadow-panel: 0 1px 2px rgba(16, 24, 40, 0.06), 0 12px 32px -18px rgba(16, 24, 40, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-numeric: tabular-nums;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100dvh;
+  isolation: isolate;
+}
+
+/* subtle darkroom-warm radial vignette behind everything */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(1100px 620px at 78% -8%, rgba(123, 108, 255, 0.1), transparent 60%),
+    radial-gradient(900px 560px at 8% 4%, rgba(79, 124, 255, 0.08), transparent 58%);
+}
+:root[data-theme='light'] body::before {
+  background:
+    radial-gradient(1100px 620px at 78% -8%, rgba(123, 108, 255, 0.08), transparent 60%),
+    radial-gradient(900px 560px at 8% 4%, rgba(79, 124, 255, 0.06), transparent 58%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-a);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: rgba(123, 108, 255, 0.35);
+}
+
+/* number rendering for metrics */
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--hairline-strong) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--hairline-strong);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
