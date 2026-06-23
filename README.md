@@ -100,7 +100,7 @@ Deploy steps for a HuggingFace Docker Space are in [`hf_space/README.md`](hf_spa
 
 ## Credits
 
-Built by Parham Khosh Solat and Farshad Farahtaj for a computer-vision course.
+Built by Parham Khosh Solat for a computer-vision course.
 
 - Based on Yu, Dong, Lin, Loy, "Crafting a Toolchain for Image Restoration by Deep
   Reinforcement Learning," CVPR 2018 ([arXiv:1804.03312](https://arxiv.org/abs/1804.03312)).
