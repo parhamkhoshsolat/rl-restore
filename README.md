@@ -1,5 +1,15 @@
 # RL-Restore
 
+I reimplemented a CVPR 2018 paper where a deep-RL agent repairs photos by chaining small specialist CNNs, then extended it with baselines, the paper's unreleased fine-tuning, a generative finisher, and a live web app that shows every step.
+
+<p>
+  <a href="https://parhamkhoshsolat-rl-restore.hf.space"><img src="https://img.shields.io/badge/Live_demo-Hugging_Face-5dc6ff?style=flat-square&labelColor=0a1422" alt="Live_demo: Hugging_Face"></a>
+  <a href="https://www.parhamkhoshsolat.com/projects/rl-restore"><img src="https://img.shields.io/badge/Write--up-portfolio-5dc6ff?style=flat-square&labelColor=0a1422" alt="Write--up: portfolio"></a>
+  <img src="https://img.shields.io/badge/2026-solo-5dc6ff?style=flat-square&labelColor=0a1422" alt="2026: solo">
+</p>
+
+## Overview
+
 A PyTorch reimplementation of **"Crafting a Toolchain for Image Restoration by
 Deep Reinforcement Learning"** (Yu, Dong, Lin, Loy — CVPR 2018), with three
 additions the original work didn't ship: a single-CNN baseline for an honest
@@ -12,7 +22,9 @@ at one kind of damage at one strength) and a reinforcement-learning **agent** th
 looks at a damaged photo and picks a short chain of tools to apply — in order,
 adapting as it goes, and stopping when the photo is good enough.
 
-## Headline results (held-out DIV2K test, PSNR gain over the damaged input)
+## Results
+
+Held-out DIV2K test, PSNR gain over the damaged input (dB).
 
 | Method | mild | moderate | severe | overall |
 |---|---|---|---|---|
@@ -33,7 +45,7 @@ raises the toolbox's oracle ceiling to **+4.25** — above the single-CNN baseli
 numbers and protocol in [`docs/technical_documentation.md`](docs/technical_documentation.md)
 and [`reports/eval_joint_ft/`](reports/eval_joint_ft/).
 
-## Repository layout
+## Project layout
 
 ```
 src/rlrestore/        the package
@@ -98,12 +110,19 @@ Deploy steps for a HuggingFace Docker Space are in [`hf_space/README.md`](hf_spa
 - [`docs/technical_documentation.md`](docs/technical_documentation.md) — the engineer-facing reference: architectures, schedules, the full results, reproducibility.
 - [`docs/paper_config.md`](docs/paper_config.md) — the exact degradation and training settings, matched to the original paper.
 
-## Credits
+## Team & course
 
-Built by Parham Khosh Solat for a computer-vision course.
+Solo project by Parham Khosh Solat for a computer-vision course, about 200 tests.
 
 - Based on Yu, Dong, Lin, Loy, "Crafting a Toolchain for Image Restoration by Deep
   Reinforcement Learning," CVPR 2018 ([arXiv:1804.03312](https://arxiv.org/abs/1804.03312)).
 - The optional Enhance step uses Real-ESRGAN (Wang et al., 2021), BSD-3-Clause; the bundled
   weight `hf_space/checkpoints/realesrgan/RealESRGAN_x4plus.pth` is redistributed under that license.
-- Our own code is released under the MIT License (see [`LICENSE`](LICENSE)).
+
+## License
+
+MIT. See [`LICENSE`](LICENSE). Real-ESRGAN weights keep their BSD-3-Clause license.
+
+---
+
+Part of my portfolio: [parhamkhoshsolat.com](https://www.parhamkhoshsolat.com)
