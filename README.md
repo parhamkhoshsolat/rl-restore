@@ -121,7 +121,7 @@ Solo project by Parham Khosh Solat for a computer-vision course, about 200 tests
 
 ## License
 
-MIT. See [`LICENSE`](LICENSE). Real-ESRGAN weights keep their BSD-3-Clause license.
+MIT. See [`LICENSE`](LICENSE). Real-ESRGAN weights keep their BSD-3-Clause license (see [`NOTICE`](NOTICE)).
 
 ---
 

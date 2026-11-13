@@ -19,9 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-The bundled Real-ESRGAN weight (hf_space/checkpoints/realesrgan/RealESRGAN_x4plus.pth)
-is from the Real-ESRGAN project (https://github.com/xinntao/Real-ESRGAN) and is
-licensed under BSD-3-Clause by its authors, not covered by the MIT license above.
