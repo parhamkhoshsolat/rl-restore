@@ -29,7 +29,7 @@ export const METHOD_REGISTRY: Record<MethodId, MethodUI> = {
     tagline: 'Most explainable',
     blurb: 'Picks named tools one at a time and shows every move. The softest result — but you see exactly why.',
     stat: '+2.93 dB',
-    statSub: 'avg PSNR gain · up to 3 steps',
+    statSub: 'avg PSNR gain, 63×63 test patches · up to 3 steps',
     kindLabel: 'Sequential · explainable',
     accent: 'accent',
   },
@@ -39,17 +39,17 @@ export const METHOD_REGISTRY: Record<MethodId, MethodUI> = {
     tagline: 'Explainable, tuned',
     blurb: 'The agent with its 12 tools jointly fine-tuned (the paper’s Algorithm 1). A real step up — still soft by design.',
     stat: '+3.67 dB',
-    statSub: 'avg PSNR gain · up to 3 steps',
+    statSub: 'avg PSNR gain, 63×63 test patches · up to 3 steps',
     kindLabel: 'Sequential · fine-tuned',
     accent: 'accent',
   },
   unet_hq: {
     id: 'unet_hq',
     emoji: '💎',
-    tagline: 'Highest quality',
-    blurb: 'A bigger U-Net trained with an L1 objective — the “improve on the paper” upgrade. Cleaner, still a touch soft.',
-    stat: '+4.15 dB',
-    statSub: 'avg PSNR gain · single pass',
+    tagline: 'Bigger U-Net',
+    blurb: 'A bigger U-Net trained with an L1 objective. It has no committed held-out evaluation, so no score is shown.',
+    stat: 'not evaluated',
+    statSub: 'no held-out score · single pass',
     kindLabel: 'Single pass · upgrade',
     accent: 'success',
   },
@@ -59,7 +59,7 @@ export const METHOD_REGISTRY: Record<MethodId, MethodUI> = {
     tagline: 'Highest PSNR',
     blurb: 'One big CNN in a single pass. Strong but silent — no steps to read.',
     stat: '+4.03 dB',
-    statSub: 'avg PSNR gain · single pass',
+    statSub: 'avg PSNR gain, 63×63 test patches · single pass',
     kindLabel: 'Single pass · baseline',
     accent: 'success',
   },
@@ -108,6 +108,9 @@ export function isSequentialMethod(id: MethodId): boolean {
 }
 
 // --- real measured gains (reports/eval_test, DIV2K held-out test) ------------
+// Mean PSNR gain on 63x63 test patches, 500 episodes per class. The agent's dispatcher was
+// trained on moderate damage only and is scored on all three classes. HQ Restore (unet_hq) has
+// no committed evaluation, so it has no gain constant here.
 export const AGENT_GAIN_BY_SEVERITY: Record<Severity, number> = {
   mild: 2.24,
   moderate: 2.83,
@@ -115,7 +118,6 @@ export const AGENT_GAIN_BY_SEVERITY: Record<Severity, number> = {
 };
 export const AGENT_GAIN_OVERALL = 2.93;
 export const AGENT_FT_GAIN_OVERALL = 3.67;
-export const UNET_HQ_GAIN_OVERALL = 4.15;
 export const MONOLITH_GAIN_OVERALL = 4.03;
 export const ORACLE_CEILING = 3.24; // B4 oracle-with-stop
 

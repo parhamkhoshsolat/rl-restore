@@ -74,8 +74,8 @@ _METHOD_CATALOGUE = {
         "name": "HQ Restore",
         "kind": "single_pass",
         "description": (
-            "A bigger U-Net trained with an L1 objective — the 'improve on the "
-            "paper' upgrade. Best held-out gain (+4.15 dB), strongest on severe damage."
+            "A bigger U-Net trained with an L1 objective. It has no committed "
+            "held-out evaluation, so no PSNR gain is reported for it."
         ),
     },
 }

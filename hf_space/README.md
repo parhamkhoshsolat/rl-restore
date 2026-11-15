@@ -49,6 +49,11 @@ docker run --rm -u 1000 -p 7860:7860 rl-restore
 4. Watch **Logs → Build**, then **Container** until `Uvicorn running on http://0.0.0.0:7860`.
    The app is live at `https://<USERNAME>-<SPACE_NAME>.hf.space`. Every push rebuilds.
 
-> The demo serves three methods, all bundled in `checkpoints/`: **agent** (frozen
-> toolbox, +2.93 dB), **agent_ft** (the jointly fine-tuned toolbox — the headline,
-> +3.67 dB), and **monolith** (+4.03 dB raw PSNR, no step-by-step reasoning).
+> The demo serves four methods, all bundled in `checkpoints/`: **agent** (frozen
+> toolbox, +2.93 dB), **agent_ft** (the jointly fine-tuned toolbox, +3.67 dB),
+> **monolith** (+4.03 dB raw PSNR, no step-by-step reasoning) and **unet_hq**
+> (HQ Restore, a bigger U-Net with no committed held-out evaluation, so no score is shown).
+> The scores are mean PSNR gains on 63x63 patches from the held-out DIV2K test images
+> (751 to 800), 500 episodes per damage class. The agent's dispatcher was trained on
+> moderate damage only and is scored on mild, moderate and severe damage. On uploaded
+> photos the quality meter is a no-reference sharpness and noise proxy, not PSNR.

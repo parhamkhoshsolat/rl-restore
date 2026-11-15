@@ -114,8 +114,9 @@ export function App() {
       <footer className="app__footer">
         <span>RL-Restore — a course demo of explainable, tool-by-tool image restoration.</span>
         <span className="app__footer-dim">
-          Agent +2.93 · fine-tuned +3.67 · HQ Restore +4.15 · Monolith +4.03 dB on DIV2K test · Enhance is
-          generative (Real-ESRGAN 4×) — synthesized detail, no PSNR.
+          Mean PSNR gain on 63×63 DIV2K test patches: Agent +2.93 · fine-tuned +3.67 · Monolith +4.03 dB
+          (the agent's dispatcher was trained on moderate damage only) · HQ Restore not evaluated · Enhance
+          is generative (Real-ESRGAN 4×) — synthesized detail, no PSNR.
         </span>
       </footer>
     </>

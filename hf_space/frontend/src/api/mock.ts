@@ -77,7 +77,7 @@ export const MOCK_METHODS: MethodsResponse = {
   methods: [
     { id: 'agent', name: 'RL Agent', description: 'Most explainable.', kind: 'agentic', available: true },
     { id: 'agent_ft', name: 'RL Agent (fine-tuned)', description: 'Best agent quality (+3.67 dB).', kind: 'agentic', available: true },
-    { id: 'unet_hq', name: 'HQ Restore', description: 'Best held-out gain (+4.15 dB).', kind: 'single_pass', available: true },
+    { id: 'unet_hq', name: 'HQ Restore', description: 'Bigger U-Net (L1). Not evaluated on the held-out test.', kind: 'single_pass', available: true },
     { id: 'monolith', name: 'Monolithic CNN', description: 'Highest raw PSNR (+4.03 dB).', kind: 'single_pass', available: true },
   ],
   tools: TOOL_DEFS,

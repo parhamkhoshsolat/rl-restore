@@ -69,7 +69,8 @@ export function Landing({ onStart }: { onStart: () => void }) {
           <p className="landing__sub">
             Most restorers hand you a fixed image and a shrug. This agent shows its work — choosing one
             named tool per step while the quality meter climbs. Honest by design: the monolith baseline
-            scores higher on raw PSNR, but it can't tell you <em>why</em>.
+            scores higher on raw PSNR, but it can't tell you <em>why</em>. Scores are mean PSNR gains on
+            63×63 DIV2K test patches.
           </p>
           <div className="landing__cta-row">
             <Button variant="primary" className="landing__cta" onClick={onStart}>
@@ -78,7 +79,7 @@ export function Landing({ onStart }: { onStart: () => void }) {
             <div className="landing__stats">
               <Stat label="Agent" value={`+${AGENT_GAIN_OVERALL.toFixed(2)} dB`} tone="accent" />
               <Stat label="Monolith" value={`+${MONOLITH_GAIN_OVERALL.toFixed(2)} dB`} tone="success" />
-              <Stat label="Oracle ceiling" value={`+${ORACLE_CEILING.toFixed(2)} dB`} tone="muted" />
+              <Stat label="Oracle with stop" value={`+${ORACLE_CEILING.toFixed(2)} dB`} tone="muted" />
             </div>
           </div>
         </div>
@@ -92,9 +93,9 @@ export function Landing({ onStart }: { onStart: () => void }) {
           <Stepper frames={player.frames} position={player.position} onSeekStep={player.seekStep} />
           <div className="landing__demo-cap">
             <span className="landing__demo-live">
-              <i /> live preview
+              <i /> preview
             </span>
-            a real agent rollout on a moderate-damage photo
+            an illustrative animation with synthetic frames, not a real rollout
           </div>
         </div>
       </section>

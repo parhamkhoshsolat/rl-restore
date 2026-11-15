@@ -24,24 +24,35 @@ adapting as it goes, and stopping when the photo is good enough.
 
 ## Results
 
-Held-out DIV2K test, PSNR gain over the damaged input (dB).
+Mean PSNR gain over the damaged input (dB) on 63x63 test patches drawn from the held-out
+DIV2K test images (751 to 800), 500 episodes per damage class and 1,500 in total. All
+methods see byte-identical episodes. Source: [`reports/eval_test/`](reports/eval_test/) and
+[`reports/eval_monolith/`](reports/eval_monolith/).
 
 | Method | mild | moderate | severe | overall |
 |---|---|---|---|---|
-| Best single tool | 1.51 | 2.34 | 3.16 | +2.34 |
+| Best single tool (chosen per class with hindsight) | 1.51 | 2.34 | 3.16 | +2.34 |
 | **RL agent** (DQN+LSTM, ≤3 tools) | 2.24 | 2.83 | 3.71 | **+2.93** |
-| Greedy oracle (best-possible chain) | 2.73 | 3.13 | 3.86 | +3.24 |
+| Greedy oracle (best tool at every step, no stop) | 2.67 | 3.10 | 3.84 | +3.20 |
+| Oracle with stop (best possible chain) | 2.73 | 3.13 | 3.86 | +3.24 |
 | **Single CNN baseline** (448k params) | 3.38 | 3.91 | 4.79 | **+4.03** |
 
-The agent reaches 90% of the oracle ceiling and nearly doubles the best single
-tool. A single end-to-end CNN of equal size scores higher on raw PSNR — which is
-the honest finding: the RL toolchain's value is **interpretability** (it shows its
-work step by step), modularity, and per-image adaptivity, not peak fidelity.
+The agent reaches 90% of the oracle-with-stop ceiling (+3.24) and scores +0.59 dB
+(about 25%) above the best single tool (+2.93 vs +2.34). A single end-to-end CNN of
+equal size scores higher on raw PSNR, which is the honest finding: the toolchain's
+appeal is that each step is visible (this was not measured) and that it is modular,
+not peak fidelity.
+
+Limits to keep in mind: the scores are on 63x63 test patches, not full photos (the
+full-image path is only the demo); the agent's dispatcher was trained on moderate damage
+only but is scored on all three classes, while the single CNN trained on all three, which
+favours the CNN; and all agent numbers come from one training seed.
 
 **Joint fine-tuning** (the paper's unreleased Algorithm 1) then retrains the tools on
 the mid-chain images they actually see. On the held-out test it lifts the *same* agent
 from +2.93 to **+3.67** (a **+0.74 dB** gain, ~3× the paper's reported ~0.25) and
-raises the toolbox's oracle ceiling to **+4.25** — above the single-CNN baseline. Full
+raises the toolbox's greedy-oracle ceiling to **+4.25** (+4.33 with stop), above the
+single-CNN baseline. Full
 numbers and protocol in [`docs/technical_documentation.md`](docs/technical_documentation.md)
 and [`reports/eval_joint_ft/`](reports/eval_joint_ft/).
 
@@ -97,7 +108,9 @@ scratch.
 
 `hf_space/` is a self-contained FastAPI + React app (no Gradio). Pick a method,
 upload or snap a photo, and watch the agent restore it one tool at a time with the
-quality meter climbing. To run it locally:
+quality meter climbing. On uploads the meter is a no-reference sharpness and noise proxy,
+not PSNR. The "HQ Restore" U-Net in the demo has no committed held-out evaluation, so the
+demo shows no score for it. To run it locally:
 
 ```bash
 docker build -t rl-restore hf_space/ && docker run --rm -u 1000 -p 7860:7860 rl-restore
